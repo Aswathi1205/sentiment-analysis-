@@ -1,45 +1,64 @@
-# 🚀 Sentiment Analysis with LSTM  
-Hey there! 👋 This project is all about teaching a computer to **understand emotions in text** using deep learning. Whether it's a happy movie review or a frustrated tweet, our LSTM model can figure it out!  
+# News Article Sentiment Analysis
 
-## 🌟 What’s Inside?  
-- ✅ Cleans & preprocesses text data (so the model understands it better)  
-- ✅ Uses **word embeddings** to give meaning to words  
-- ✅ Trains a **LSTM (Long Short-Term Memory) model** to classify sentiments  
-- ✅ Prevents overfitting with **Dropout layers**  
-- ✅ Evaluates the model & visualizes accuracy  
+## 📌 Overview
+This project allows users to input a news article URL and get a quick summary along with a sentiment analysis report. The sentiment analysis determines whether the article's tone is **Positive, Negative, or Neutral**.
 
-## 🛠 What You Need  
-First, install the required dependencies:  
-```
-pip install pandas matplotlib tensorflow
-```
+## 🚀 Features
+- Fetches and processes news articles from any URL.
+- Summarizes the article by extracting key sentences.
+- Performs sentiment analysis to determine the overall tone.
+- Displays the polarity (positive/negative) and subjectivity (factual/opinion-based).
 
-## 📌 How It Works  
-1️⃣ Load and clean your dataset 📊  
-2️⃣ Convert text into numerical form (Tokenization & Padding) 🔢  
-3️⃣ Train the LSTM model 🧠  
-4️⃣ Test it on new text and see if it's positive or negative! 🤖  
+## 🛠️ Installation
+### Prerequisites
+Ensure you have **Python 3.x** installed.
 
-## 📂 Project Structure  
-```
-📂 Sentiment-Analysis
- ├── 📜 Sentiment Analysis.ipynb  # Jupyter Notebook with all the magic ✨
- ├── 📜 README.md                 # You’re reading it now! 😃
- ├── 📂 data                      # Dataset (if applicable)
- ├── 📂 models                    # Trained model files
- ├── 📜 requirements.txt          # List of dependencies
+### Install Required Libraries
+```sh
+pip install newspaper3k textblob
 ```
 
-## 🔮 Future Plans  
-- Add **Bidirectional LSTM** for better context understanding  
-- Try **pre-trained embeddings** like GloVe or Word2Vec  
-- Build a **web app** to make it interactive!  
+Additionally, download the necessary NLTK data for text processing:
+```sh
+python -m textblob.download_corpora
+```
 
----
+## 🔧 Usage
+1. **Run the script:**
+```sh
+python sentiment_analysis.py
+```
+2. **Enter the article URL** when prompted.
+3. **View the results**, including:
+   - Key points from the article
+   - Overall sentiment (Positive, Negative, Neutral)
+   - Polarity and Subjectivity scores
 
-### 💡 Contribute & Improve  
-Want to improve the model? Found a bug? PRs are welcome! 🛠️  
+## 📜 Example Output
+```
+🔗 Enter the news article URL: https://example.com/news
 
-**Drop a ⭐ if you like this project!** 😊✨  
+📄 Article Summary:
+📝 Sentence 1
+📝 Sentence 2
+📝 Sentence 3
+📝 Sentence 4
+📝 Sentence 5
 
----
+🔍 Sentiment Analysis Result:
+➡️ Overall Tone: Positive
+🟢 Polarity Score: 0.75
+📝 Subjectivity Score: 0.60
+```
+
+## 🛠️ Troubleshooting
+- If the article fails to download, **check the URL** and make sure it's accessible.
+- If you get a missing corpus error, **run the TextBlob data download command** again.
+- If the script takes too long, **use a shorter article** or manually limit text length in the script.
+
+## 🤝 Contributing
+Feel free to suggest improvements or report issues by opening an issue or pull request.
+
+## 📜 License
+This project is licensed under the **MIT License**.
+

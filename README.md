@@ -1,64 +1,93 @@
-# News Article Sentiment Analysis
+# 📰 Sentiment Article Analyzer - README
 
-## 📌 Overview
-This project allows users to input a news article URL and get a quick summary along with a sentiment analysis report. The sentiment analysis determines whether the article's tone is **Positive, Negative, or Neutral**.
+## 🔍 Overview
 
-## 🚀 Features
-- Fetches and processes news articles from any URL.
-- Summarizes the article by extracting key sentences.
-- Performs sentiment analysis to determine the overall tone.
-- Displays the polarity (positive/negative) and subjectivity (factual/opinion-based).
+This Python script analyzes the sentiment of news articles by extracting text content from a given URL and performing sentiment analysis using **TextBlob**. It provides a detailed breakdown of the article's tone, polarity, subjectivity, and other key metrics.
 
-## 🛠️ Installation
-### Prerequisites
-Ensure you have **Python 3.x** installed.
+## ✨ Features
 
-### Install Required Libraries
-```sh
+* 📄 Fetches and parses articles using the `newspaper3k` library
+* 🧠 Performs sentiment analysis on the article text
+* 🎯 Classifies sentiment into 5 categories:
+
+  * 💚 **Strongly Positive** (polarity > 0.5)
+  * 🙂 **Positive** (polarity > 0)
+  * 😐 **Neutral** (polarity = 0)
+  * 🙁 **Negative** (polarity > -0.5 and ≤ 0)
+  * 💔 **Strongly Negative** (polarity ≤ -0.5)
+* 📊 Provides additional article insights:
+
+  * 📰 Title
+  * ✍️ Summary
+  * 🏷️ Keywords
+  * 💬 Sample sentences
+  * 🌐 Language detection
+
+## ⚙️ Requirements
+
+* 🐍 Python 3.x
+* 📦 Required packages:
+
+  * `newspaper3k`
+  * `textblob`
+
+📥 Install requirements with:
+
+```bash
 pip install newspaper3k textblob
 ```
 
-Additionally, download the necessary NLTK data for text processing:
-```sh
-python -m textblob.download_corpora
+> 🧾 **Note:** To use TextBlob, you might need to download additional NLTK corpora. Run this once in your Python environment:
+
+```python
+import nltk
+nltk.download('punkt')
 ```
 
-## 🔧 Usage
-1. **Run the script:**
-```sh
-python sentiment_analysis.py
-```
-2. **Enter the article URL** when prompted.
-3. **View the results**, including:
-   - Key points from the article
-   - Overall sentiment (Positive, Negative, Neutral)
-   - Polarity and Subjectivity scores
+## ▶️ Usage
 
-## 📜 Example Output
-```
-🔗 Enter the news article URL: https://example.com/news
+1. Run the script:
 
-📄 Article Summary:
-📝 Sentence 1
-📝 Sentence 2
-📝 Sentence 3
-📝 Sentence 4
-📝 Sentence 5
-
-🔍 Sentiment Analysis Result:
-➡️ Overall Tone: Positive
-🟢 Polarity Score: 0.75
-📝 Subjectivity Score: 0.60
+```bash
+python sentiment_article_analyzer.py
 ```
 
-## 🛠️ Troubleshooting
-- If the article fails to download, **check the URL** and make sure it's accessible.
-- If you get a missing corpus error, **run the TextBlob data download command** again.
-- If the script takes too long, **use a shorter article** or manually limit text length in the script.
+2. When prompted, enter the URL of the news article you want to analyze.
+3. 📺 View the analysis results in your terminal.
 
-## 🤝 Contributing
-Feel free to suggest improvements or report issues by opening an issue or pull request.
+## 📌 Output Example
 
-## 📜 License
-This project is licensed under the **MIT License**.
+```
+🔍 Fetching and analyzing the article...
+
+📄 Article Title: Example News Article Title  
+📝 Article Summary:  
+This is an automatically generated summary of the article content...  
+🏷️ Keywords: keyword1, keyword2, keyword3
+
+🧠 Analyzed Sentences:  
+➡️ This is the first analyzed sentence.  
+➡️ Here's another important sentence from the article.
+
+========================================  
+🔍 Sentiment Analysis Result  
+========================================  
+➡️ Overall Tone: Positive  
+🟢 Polarity Score: 0.35  
+📝 Subjectivity Score: 0.65  
+🈸 Detected Language: en
+```
+
+## 🧾 Notes
+
+* ⚡ The script analyzes only the first 2000 characters of the article to maintain performance.
+* 🚫 Some websites may block automated scraping attempts or require headers/user-agent spoofing.
+* 🤖 Sentiment analysis results are approximate and based on linguistic patterns.
+* 🌍 Language detection is based on the article text and may not be 100% accurate.
+
+## 🪪 License
+
+This project is open-source and available for public use.
+
+---
 

@@ -4,3 +4,4 @@ nltk
 textblob
 wordcloud
 matplotlib
+lxml_html_clean

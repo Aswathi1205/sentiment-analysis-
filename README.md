@@ -1,93 +1,56 @@
-# 📰 Sentiment Article Analyzer - README
+# 📰 News Article Sentiment Analyzer
 
-## 🔍 Overview
+A real-time web application that analyzes the sentiment of news articles using Natural Language Processing (NLP). It provides detailed insights into the emotional tone, polarity, and key themes of any article URL provided.
 
-This Python script analyzes the sentiment of news articles by extracting text content from a given URL and performing sentiment analysis using **TextBlob**. It provides a detailed breakdown of the article's tone, polarity, subjectivity, and other key metrics.
+## 🚀 Features
 
-## ✨ Features
+*   **Instant Analysis**: Fetch and analyze articles directly from a URL.
+*   **Accurate Sentiment**: Uses the **VADER** model for robust sentiment classification (Positive, Negative, Neutral).
+*   **Visual Dashboard**:
+    *   **Word Cloud**: Visualize frequent terms.
+    *   **Sentiment Trend**: Track how sentiment changes sentence-by-sentence.
+    *   **Key Metrics**: Compound scores and subjectivity analysis.
+*   **User-Friendly Interface**: Built with [Streamlit](https://streamlit.io/) for a clean and responsive experience.
 
-* 📄 Fetches and parses articles using the `newspaper3k` library
-* 🧠 Performs sentiment analysis on the article text
-* 🎯 Classifies sentiment into 5 categories:
+## 🛠️ Installation
 
-  * 💚 **Strongly Positive** (polarity > 0.5)
-  * 🙂 **Positive** (polarity > 0)
-  * 😐 **Neutral** (polarity = 0)
-  * 🙁 **Negative** (polarity > -0.5 and ≤ 0)
-  * 💔 **Strongly Negative** (polarity ≤ -0.5)
-* 📊 Provides additional article insights:
+1.  **Clone the repository** (if applicable) or navigate to the project directory.
 
-  * 📰 Title
-  * ✍️ Summary
-  * 🏷️ Keywords
-  * 💬 Sample sentences
-  * 🌐 Language detection
+2.  **Install dependencies**:
+    Ensure you have Python 3.8+ installed. Run the following command:
+    ```bash
+    pip install streamlit newspaper3k nltk textblob wordcloud matplotlib
+    ```
 
-## ⚙️ Requirements
+3.  **Download NLTK Data**:
+    The app automatically checks for and downloads necessary NLTK data (punkt, vader_lexicon) on the first run.
 
-* 🐍 Python 3.x
-* 📦 Required packages:
+## 🏃‍♂️ Usage
 
-  * `newspaper3k`
-  * `textblob`
+1.  **Run the Application**:
+    Execute the following command in your terminal:
+    ```bash
+    streamlit run app.py
+    ```
 
-📥 Install requirements with:
+2.  **Analyze an Article**:
+    *   The app will open in your web browser (usually http://localhost:8501).
+    *   Paste a valid News Article URL into the input field.
+    *   Click **"Analyze Article"**.
 
-```bash
-pip install newspaper3k textblob
-```
+## 📂 Project Structure
 
-> 🧾 **Note:** To use TextBlob, you might need to download additional NLTK corpora. Run this once in your Python environment:
+*   `app.py`: The main Streamlit application script.
+*   `sentiment_article_analyzer.py`: The core NLP analysis logic (helper functions).
+*   `PROJECT_REPORT.md`: Detailed documentation on the project's working, use cases, and accuracy.
 
-```python
-import nltk
-nltk.download('punkt')
-```
+## 🧠 Technical Details
 
-## ▶️ Usage
+This project utilizes:
+*   **Newspaper3k**: For article scraping and parsing.
+*   **NLTK VADER**: For lexicon and rule-based sentiment analysis.
+*   **TextBlob**: For additional text processing.
 
-1. Run the script:
 
-```bash
-python sentiment_article_analyzer.py
-```
 
-2. When prompted, enter the URL of the news article you want to analyze.
-3. 📺 View the analysis results in your terminal.
-
-## 📌 Output Example
-
-```
-🔍 Fetching and analyzing the article...
-
-📄 Article Title: Example News Article Title  
-📝 Article Summary:  
-This is an automatically generated summary of the article content...  
-🏷️ Keywords: keyword1, keyword2, keyword3
-
-🧠 Analyzed Sentences:  
-➡️ This is the first analyzed sentence.  
-➡️ Here's another important sentence from the article.
-
-========================================  
-🔍 Sentiment Analysis Result  
-========================================  
-➡️ Overall Tone: Positive  
-🟢 Polarity Score: 0.35  
-📝 Subjectivity Score: 0.65  
-🈸 Detected Language: en
-```
-
-## 🧾 Notes
-
-* ⚡ The script analyzes only the first 2000 characters of the article to maintain performance.
-* 🚫 Some websites may block automated scraping attempts or require headers/user-agent spoofing.
-* 🤖 Sentiment analysis results are approximate and based on linguistic patterns.
-* 🌍 Language detection is based on the article text and may not be 100% accurate.
-
-## 🪪 License
-
-This project is open-source and available for public use.
-
----
-
+For a deep dive into the architecture and use cases, please refer to the [Project Report](PROJECT_REPORT.md).

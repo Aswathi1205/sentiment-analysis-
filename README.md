@@ -2,7 +2,11 @@
 
 A real-time web application that analyzes the sentiment of news articles using Natural Language Processing (NLP). It provides detailed insights into the emotional tone, polarity, and key themes of any article URL provided.
 
-## 🚀 Features
+## � Live Demo
+Check out the live application here: [**News Article Sentiment Analyzer**](https://sentiment-analysis-for-articles-and-news.streamlit.app/)
+
+
+## �🚀 Features
 
 *   **Instant Analysis**: Fetch and analyze articles directly from a URL.
 *   **Accurate Sentiment**: Uses the **VADER** model for robust sentiment classification (Positive, Negative, Neutral).
@@ -50,7 +54,5 @@ This project utilizes:
 *   **Newspaper3k**: For article scraping and parsing.
 *   **NLTK VADER**: For lexicon and rule-based sentiment analysis.
 *   **TextBlob**: For additional text processing.
-
-
 
 For a deep dive into the architecture and use cases, please refer to the [Project Report](PROJECT_REPORT.md).
